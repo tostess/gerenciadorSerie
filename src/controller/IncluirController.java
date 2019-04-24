@@ -24,6 +24,8 @@ import model.Serie;
  * @author ComputaDor
  */
 public class IncluirController implements Initializable {
+    
+    InterfaceDAO dao = new SerieDAO();
 
     @FXML
     private TextField txtSerie;
@@ -56,18 +58,22 @@ public class IncluirController implements Initializable {
             int episodios = Integer.parseInt(txtEpisodios.getText());
             //String imagem = imgg;
             Serie c = new Serie(serie, temporadas, emissora, episodios, classificacao );
-            InterfaceDAO dao = new SerieDAO();
+            c.setStatus(false);
+            c.setImg("aa");
             //c.setImg(imgg);
             
             
-            
+            System.out.println("oloco");
             dao.incluir(c);
             //apagarCamposGravacao();
             Util.fecharTela(btnGravar);
+            
+            
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex);
 
         }//adicionar tudo 
     }
+    
     
 }

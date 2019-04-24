@@ -61,6 +61,8 @@ public class MenuController implements Initializable {
     private ImageView imgView;
     
     InterfaceDAO dao = new SerieDAO();
+    @FXML
+    private Button btnUpdate;
 
     /**
      * Initializes the controller class.
@@ -103,6 +105,7 @@ public class MenuController implements Initializable {
         System.out.println("aaaaaa");
         chamarTela("/view/Incluir.fxml");
         
+        
     }
     public void chamarTela(String arquivo) {
         try {
@@ -114,6 +117,7 @@ public class MenuController implements Initializable {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Erro: " + ex);
         }
+        
     }
 
     @FXML
@@ -122,6 +126,11 @@ public class MenuController implements Initializable {
 
     @FXML
     private void editar(ActionEvent event) {
+    }
+
+    @FXML
+    private void updatee(ActionEvent event) {
+        update();
     }
     
 }

@@ -33,8 +33,9 @@ public class SerieDAO implements InterfaceDAO{
         Connection conn = conectar();
         try {
             Serie c = (Serie) o;//instanciando contato num objeto genérico.
-            String sql = "INSERT INTO serie VALUES(?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO serie(serie, temporadas, emissora, episodios, classificacao, status, img) VALUES(?,?,?,?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(sql);
+            
             ps.setString(1, c.getSerie());
             ps.setInt(2, c.getTemporadas());
             ps.setString(3, c.getEmissora());

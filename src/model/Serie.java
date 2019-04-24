@@ -35,7 +35,13 @@ public class Serie {
     }
 
     public Serie(String serie, int temporadas, String emissora, int episodios, Float classificacao ) {
-        
+        this.serie = serie;
+        this.temporadas = temporadas;
+        this.emissora = emissora;
+        this.episodios = episodios;
+        this.classificacao = classificacao;
+        //this.status = status;
+       // this.img = img;
     }
 
     public String getSerie() {
